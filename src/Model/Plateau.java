@@ -8,14 +8,16 @@ public class Plateau {
 	{
 		
 		setPlateau(new Case[15][15]);
+		
 		for(int i=0;i<15;i++)
 		{
 			for(int y=0;y<15;y++)
 			{
 				
-				if(i==0 && y==0)
+				if(i==0)
 				{
-						
+					
+					
 				}
 				
 				
