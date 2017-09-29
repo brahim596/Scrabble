@@ -1,6 +1,8 @@
 package Model;
 
-public class Plateau {
+import java.io.Serializable;
+
+public class Plateau implements Serializable {
 
 	private Case[][] plateau;
 	
@@ -10,7 +12,7 @@ public class Plateau {
 		
 	}
 	
-	public void Construire_Tableau(){
+	public void construirePlateau(){
 		
 		setPlateau(new Case[15][15]);
 		

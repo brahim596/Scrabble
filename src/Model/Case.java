@@ -1,11 +1,13 @@
 package Model;
 
+import java.io.Serializable;
+
 //Cette classe représente une case sur le plateau du Scrabble
 
 
-public class Case {
+public class Case implements Serializable{
 	
-	private Pion p;
+	private Jeton j;
 	private String type;
 	
 	public Case(String t)
@@ -13,12 +15,12 @@ public class Case {
 		type=t;
 	}
 
-	public Pion getP() {
-		return p;
+	public Jeton getJ() {
+		return j;
 	}
 
-	public void setP(Pion p) {
-		this.p = p;
+	public void setP(Jeton j) {
+		this.j = j;
 	}
 
 	public String getType() {
