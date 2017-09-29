@@ -2,12 +2,12 @@ package Model;
 
 public class Plateau {
 
+	//Classe qui représente le plateau de jeu 
 	private Case[][] plateau;
 	
 	public Plateau()
 	{
-		
-		
+		Construire_Tableau();
 	}
 	
 	public void Construire_Tableau(){

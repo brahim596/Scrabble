@@ -2,12 +2,12 @@ package Model;
 
 //Cette classe représente une lettre 
 
-public class Pion {
+public class Jeton {
 	
 	private char lettre;
 	private int point;  // Le nombre de point que rapporte la lettre
 	
-	public Pion(char l)
+	public Jeton(char l)
 	{
 		lettre=l;
 	}

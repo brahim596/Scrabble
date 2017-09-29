@@ -5,19 +5,19 @@ package Model;
 
 public class Case {
 	
-	private Pion p;
-	private String type;
+	private Jeton p; // Une case peut contenir un jeton 
+	private String type; // Il existe plusieurs type : MT (mot compte triple) MD (mot compte double) LT (lettre compte triple) LD (lettre double) 
 	
 	public Case(String t)
 	{
 		type=t;
 	}
 
-	public Pion getP() {
+	public Jeton getP() {
 		return p;
 	}
 
-	public void setP(Pion p) {
+	public void setP(Jeton p) {
 		this.p = p;
 	}
 
