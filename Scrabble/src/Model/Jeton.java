@@ -5,13 +5,14 @@ import java.io.Serializable;
 //Cette classe représente une lettre 
 
 public class Jeton implements Serializable {
-	
+
 	private char lettre;
-	private int point;  // Le nombre de point que rapporte la lettre
-	
-	public Jeton(char l)
-	{
-		lettre=l;
+	private int point; // Le nombre de point que rapporte la lettre
+
+	public Jeton(char lettre, int point) {
+		super();
+		this.lettre = lettre;
+		this.point = point;
 	}
 
 	public char getLettre() {
@@ -25,5 +26,5 @@ public class Jeton implements Serializable {
 	public int getPoint() {
 		return point;
 	}
-	
+
 }
