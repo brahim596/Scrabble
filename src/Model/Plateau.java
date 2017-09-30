@@ -8,8 +8,7 @@ public class Plateau implements Serializable {
 	
 	public Plateau()
 	{
-		
-		
+		construirePlateau();
 	}
 	
 	public void construirePlateau(){
