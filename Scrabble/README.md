@@ -1,2 +1,0 @@
-# Scrabble
-Projet S5
