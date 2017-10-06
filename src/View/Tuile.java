@@ -1,5 +1,7 @@
 package View;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -11,25 +13,41 @@ import javafx.scene.shape.Rectangle;
 
 public class Tuile extends StackPane {
 	
-	private double x,y;
+	private ImageView img;
+	private Rectangle rec;
 	
 	
-	public Tuile(double xx,double yy,double largeur)
+	public Tuile(double taille)
 	{
-		this.x=xx;
-		this.y=yy;
-		
-		this.setHeight(largeur);
-		this.setWidth(largeur);
-		
-		this.setBorder(new Border(new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(1))));
-		setTranslateX(x);
-		setTranslateY(y);
+	
+	    img=new ImageView(new Image(getClass().getClassLoader().getResource("jeton.png").toString(), true));
+        img.setFitHeight(taille/17);
+        img.setFitWidth(taille/17);
+        
+        rec = new Rectangle();
+        rec.setWidth(taille/15);
+        rec.setHeight(taille/15);
+        rec.setStroke(Color.BLACK); 
+        rec.setFill(Color.TRANSPARENT);
+        rec.setStrokeWidth(3);
+        rec.setArcHeight(15);
+        rec.setArcWidth(15);
+        
+        this.getChildren().addAll(img,rec);
+        
 	}
 	
 	public void setCouleur(Color c)
 	{
-		this.setBackground(Color.BEIGE);
+		rec.setStroke(c);	
+	}
+
+	public Rectangle getRec() {
+		return rec;
+	}
+
+	public void setRec(Rectangle rec) {
+		this.rec = rec;
 	}
 
 	private void setBackground(Color beige) {

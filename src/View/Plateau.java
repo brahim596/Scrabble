@@ -31,30 +31,19 @@ public class Plateau extends StackPane {
 	public void initialisePlateau()
 	{
 		plateau =new Tuile[15][15];
-		
-	//	Image im=new Image("ressource/jeton.jpg");
-        
-		
+		        
 		for(int l=0; l<15; l++) {
             for(int col=0; col<15; col++) {
+      
+                plateau[l][col]=new Tuile((double)taille);
                 
-            	Rectangle rec = new Rectangle();
-                rec.setWidth(taille/15);
-                rec.setHeight(taille/15);
-                
-           
-                ImageView img=new ImageView(new Image(getClass().getClassLoader().getResource("jeton.png").toString(), true));
-                img.setFitHeight(taille/15);
-                img.setFitWidth(taille/15);
-                grid.setStyle("-fx-border-color: black;");
-                
-                GridPane.setRowIndex(img,l);
-                GridPane.setColumnIndex(img,col);
-                grid.getChildren().addAll(img);
+                GridPane.setRowIndex(plateau[l][col],l);
+                GridPane.setColumnIndex(plateau[l][col],col);
+                grid.getChildren().addAll(plateau[l][col]);
                  
             }
         }
-		
+		initialiseTypeCase();
 		this.getChildren().add(grid);
 		
 	}
@@ -64,6 +53,7 @@ public class Plateau extends StackPane {
 		
 		for(int i=0;i<15;i++)
 		{
+			
 			for(int y=0;y<15;y++)
 			{
 				if(i==0)
@@ -74,7 +64,7 @@ public class Plateau extends StackPane {
 					case 7: plateau[i][y].setCouleur(Color.RED);
 					case 11: plateau[i][y].setCouleur(Color.CYAN);
 					case 14: plateau[i][y].setCouleur(Color.RED);
-					default:plateau[i][y].setCouleur(Color.TRANSPARENT);
+					default:plateau[i][y].setCouleur(Color.BLACK);
 					
 					}
 					
@@ -86,7 +76,7 @@ public class Plateau extends StackPane {
 					case 5: plateau[i][y].setCouleur(Color.BLUE);
 					case 9: plateau[i][y].setCouleur(Color.BLUE);
 					case 13: plateau[i][y].setCouleur(Color.PINK);
-					default:plateau[i][y].setCouleur(Color.TRANSPARENT);
+					default:plateau[i][y].setCouleur(Color.BLACK);
 					
 					}
 				}
@@ -97,7 +87,7 @@ public class Plateau extends StackPane {
 					case 6: plateau[i][y].setCouleur(Color.CYAN);
 					case 8: plateau[i][y].setCouleur(Color.CYAN);
 					case 12: plateau[i][y].setCouleur(Color.PINK);
-					default:plateau[i][y].setCouleur(Color.TRANSPARENT);
+					default:plateau[i][y].setCouleur(Color.BLACK);
 					
 					}
 				}
