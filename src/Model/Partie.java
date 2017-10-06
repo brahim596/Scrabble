@@ -17,8 +17,16 @@ public class Partie {
 		
 	}
 	
-	public void designePremierJoueur()
+	public Joueur designePremierJoueur()
 	{
+		
+		for (Joueur j: joueurs)
+		{
+			j.piocher(sac);
+		}
+		
+		return null;
+		
 		
 	}
 	
