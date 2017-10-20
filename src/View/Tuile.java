@@ -20,25 +20,39 @@ public class Tuile extends StackPane {
 	public Tuile(double taille)
 	{
 	
-	    img=new ImageView(new Image(getClass().getClassLoader().getResource("jeton.png").toString(), true));
+	    img=new ImageView(new Image(getClass().getClassLoader().getResource("images/jetons/jeton.png").toString(), true));
         img.setFitHeight(taille/17);
         img.setFitWidth(taille/17);
+        
         
         rec = new Rectangle();
         rec.setWidth(taille/15);
         rec.setHeight(taille/15);
         rec.setStroke(Color.BLACK); 
         rec.setFill(Color.TRANSPARENT);
-        rec.setStrokeWidth(3);
-        rec.setArcHeight(15);
-        rec.setArcWidth(15);
+        rec.setStrokeWidth(2.5);
+        rec.setArcHeight(10);
+        rec.setArcWidth(10);
+        rec.setFill(Color.BEIGE);
         
-        this.getChildren().addAll(img,rec);
+        this.getChildren().addAll(rec);
         
 	}
 	
 	public void setCouleur(Color c)
 	{
+		rec.setStroke(c.darker());
+		rec.setFill(c.brighter());
+	}
+	
+	public void setImage(ImageView imgg)
+	{
+		this.getChildren().addAll(imgg);
+	}
+	
+	public void setCouleurr(Color c)
+	{
+		System.out.println("okk");
 		rec.setStroke(c);	
 	}
 

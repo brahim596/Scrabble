@@ -58,7 +58,7 @@ public class Jeton implements Serializable {
 		case 'X':points=10;
 		case 'Y':points=10;
 		case 'Z':points=10;
-		case '?':points=0;
+		case '^':points=0;
 		
 		
 		

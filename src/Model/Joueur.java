@@ -24,9 +24,30 @@ public class Joueur implements Serializable {
 		int nbAleatoire=(int) (Math.random() * ( sac.getJetons().size() - 0 ));
 		jetons.add(sac.getJetons().get(nbAleatoire));                // on ajoute le jeton dans la liste de jeton du joueur
 		sac.getJetons().remove(nbAleatoire);						 // puis on supprime le jeton du sac 
-		
 	}
 	
+	public Jeton piocherUnJeton(Sac sac)
+	{
+		int nbAleatoire=(int) (Math.random() * ( sac.getJetons().size() - 0 ));
+		return sac.getJetons().get(nbAleatoire);
+	}
+	
+	public void piocherDebutPartie(Sac sac)
+	{
+		for(int i=0;i<7;i++)
+		{
+			piocher(sac);
+		}
+	}
+	
+	public ArrayList<Jeton> getJetons() {
+		return jetons;
+	}
+
+	public void setJetons(ArrayList<Jeton> jetons) {
+		this.jetons = jetons;
+	}
+
 	public void echangerJeton(ArrayList<Integer> id,Sac sac)      //On échange les jetons à partir d'un tableau contenant les id des jetons selectionné par le joueur
 	{
 		for(int i=0;i<id.size();i++)
