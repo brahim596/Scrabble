@@ -20,14 +20,17 @@ public class ControllerPlateau implements EventHandler<MouseEvent>{
 	private Plateau plateau;
 	private PlateauV plateauView;
 	private Partie partie;
-	
+	private FenetreJeu fj;
 	private JetonV jetonv;
 	
-	public ControllerPlateau(Plateau p,Partie partie)
+	public ControllerPlateau(Partie partie,FenetreJeu fj)
 	{
-		plateau=p;
+		this.fj=fj;
 		this.partie=partie;
+		fj.AjoutController(this);
 	}
+	
+	
 	
 	public Partie getPartie() {
 		return partie;
@@ -44,33 +47,7 @@ public class ControllerPlateau implements EventHandler<MouseEvent>{
 	public void setPlateau(Plateau plateau) {
 		this.plateau = plateau;
 	}
-
-	public static void main(String[] args) throws Exception 
-	{
-		
-
-		Joueur j1=new Joueur(1,"Cr7",0);
-		Joueur j2=new Joueur(2,"Messi",0);
 	
-		ArrayList<Joueur> joueurs=new ArrayList<Joueur>();
-		
-		Plateau plateau =new Plateau();
-		
-		Sac sac=new Sac();
-		
-		j1.getJetons().add(new Jeton('A'));j1.getJetons().add(new Jeton('A'));
-		Partie partie=new Partie(joueurs,sac,plateau);
-		ControllerPlateau controllerP=new ControllerPlateau(plateau,partie);
-		
-		
-		FenetreJeu fen=new FenetreJeu();
-		fen.main(args);
-		
-		System.out.println("test");
-		fen.afficheNomJoueur(j1.getPseudo());
-		fen.setInFoJoueur(controllerP.genereJetonV(j1.getJetons()));
-		
-	}
 	
 
 	public ArrayList<JetonV> genereJetonV(ArrayList<Jeton> jetons)
@@ -93,7 +70,6 @@ public class ControllerPlateau implements EventHandler<MouseEvent>{
 			System.out.println("oooook");
 			if(partie.isJoueurJoueTour())
 			{
-				//System.out.print("OK");
 				jetonv.setVisible(false);
 			}
 		}

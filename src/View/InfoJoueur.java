@@ -21,6 +21,7 @@ public class InfoJoueur extends StackPane{
 	
 	public InfoJoueur()
 	{
+		jetonsV =new ArrayList<JetonV>();
 		cadreJetons=new GridPane();
 		labelNom=new Label();
 		this.setHeight(500);
@@ -62,7 +63,16 @@ public class InfoJoueur extends StackPane{
 		for(JetonV jt: jetonsV)
 		{
 			jt.addEventHandler(MouseEvent.MOUSE_CLICKED, ac);
+			System.out.println("Ajoute controller à un jeton");
 		}
+	}
+
+	public Label getLabelNom() {
+		return labelNom;
+	}
+
+	public void setLabelNom(Label labelNom) {
+		this.labelNom = labelNom;
 	}
 	
 }

@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class FenetreJeu extends Application{
+public class FenetreJeu extends StackPane{
 
 	private int largeur,hauteur;
 	private TextField motjoue;
@@ -33,8 +33,8 @@ public class FenetreJeu extends Application{
 		this.p = p;
 	}
 	
-	@Override
-	public void start(Stage fenetre) throws Exception {
+	
+	public FenetreJeu(){
 		
 		// On récupère la résolution de l'écran
 		
@@ -64,22 +64,11 @@ public class FenetreJeu extends Application{
 		mc.setTranslateY(height*0.2);
 		mc.setTranslateX(-width*0.4);
 		
-		StackPane layout=new StackPane();
 		
 		ij=new InfoJoueur();
 		ij.setAlignment(Pos.TOP_LEFT);
 		ij.afficheNom("Killua");
-		layout.getChildren().addAll(p,motjoue,mc,ij);
-		
-		
-		Scene scene=new Scene(layout);
-		
-		fenetre.setScene(scene);
-		fenetre.setMaximized(true);
-		fenetre.setFullScreen(true);
-		fenetre.show();
-		
-		
+		this.getChildren().addAll(p,motjoue,mc,ij);
 	
 	}
 	
@@ -101,11 +90,9 @@ public class FenetreJeu extends Application{
 		ij.afficheNom(n);
 	}
 	
-	public static void main(String[] args)
+	public void AjoutController(ControllerPlateau cp)
 	{
-		
-		launch(args);
-		
+		this.getIj().setControllerJetonV(cp);
 	}
 
 }
