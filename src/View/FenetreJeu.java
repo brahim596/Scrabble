@@ -68,25 +68,9 @@ public class FenetreJeu extends Application{
 		
 		ij=new InfoJoueur();
 		ij.setAlignment(Pos.TOP_LEFT);
-		//ij.afficheInfoJetons();
 		ij.afficheNom("Killua");
 		layout.getChildren().addAll(p,motjoue,mc,ij);
 		
-		Joueur j1=new Joueur(1,"Cr7",0);
-		Joueur j2=new Joueur(2,"Messi",0);
-		
-		ArrayList<Joueur> joueurs=new ArrayList<Joueur>();
-		
-		Plateau plateau =new Plateau();
-		
-		Sac sac=new Sac();
-		
-		j1.getJetons().add(new Jeton('A'));j1.getJetons().add(new Jeton('A'));
-		Partie partie=new Partie(joueurs,sac,plateau);
-		
-		ControllerPlateau controllerP=new ControllerPlateau(plateau,partie);
-		ij.afficheInfoJetons(controllerP.genereJetonV(j1.getJetons()));
-		ij.setControllerJetonV(controllerP);
 		
 		Scene scene=new Scene(layout);
 		

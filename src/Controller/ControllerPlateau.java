@@ -48,11 +48,27 @@ public class ControllerPlateau implements EventHandler<MouseEvent>{
 	public static void main(String[] args) throws Exception 
 	{
 		
-		
+
+		Joueur j1=new Joueur(1,"Cr7",0);
+		Joueur j2=new Joueur(2,"Messi",0);
 	
+		ArrayList<Joueur> joueurs=new ArrayList<Joueur>();
+		
+		Plateau plateau =new Plateau();
+		
+		Sac sac=new Sac();
+		
+		j1.getJetons().add(new Jeton('A'));j1.getJetons().add(new Jeton('A'));
+		Partie partie=new Partie(joueurs,sac,plateau);
+		ControllerPlateau controllerP=new ControllerPlateau(plateau,partie);
+		
+		
 		FenetreJeu fen=new FenetreJeu();
 		fen.main(args);
 		
+		System.out.println("test");
+		fen.afficheNomJoueur(j1.getPseudo());
+		fen.setInFoJoueur(controllerP.genereJetonV(j1.getJetons()));
 		
 	}
 	
