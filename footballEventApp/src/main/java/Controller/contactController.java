@@ -19,7 +19,7 @@ import java.util.Base64;
 
 
 @RestController
-@CrossOrigin(origins = "http://35.180.123.83:1800")
+@CrossOrigin(origins = "http://35.180.0.166:1800")
 public class contactController {
 
     @Autowired
